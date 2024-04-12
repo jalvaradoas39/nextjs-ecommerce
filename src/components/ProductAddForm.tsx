@@ -181,13 +181,17 @@ export default function ProductAddForm() {
                       width: '7rem',
                       borderRadius: '0.375rem',
                       overflow: 'hidden',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
                     }}
                   >
                     <Image
                       src={imagePreview}
-                      alt="Apples"
+                      width={60}
+                      height={60}
+                      alt="Image preview"
                       loading="lazy"
-                      layout="fill"
                       style={{ objectFit: 'contain' }}
                     />
                   </Box>

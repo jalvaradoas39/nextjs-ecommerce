@@ -22,6 +22,8 @@ import {
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
+import { FastForwardOutlined } from '@mui/icons-material';
+import { Alfa_Slab_One } from 'next/font/google';
 
 export default function AppContainer({
   children,

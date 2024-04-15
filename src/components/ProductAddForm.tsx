@@ -56,9 +56,22 @@ export default function ProductAddForm() {
     }
   };
 
+  const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = evt.target;
+
+    setFields((prevFields) => ({
+      ...prevFields,
+      [name]: value,
+    }));
+  };
+
   return (
     <>
-      <form>
+      <form
+        action="/api/admin/product"
+        method="POST"
+        encType="multipart/form-data"
+      >
         <Box
           sx={{ borderBottom: '1px dashed #c8cdd3', pb: 1, display: 'flex' }}
         >
@@ -252,6 +265,10 @@ export default function ProductAddForm() {
               fullWidth
               required
               sx={{ marginBottom: '1.2em' }}
+              id="name"
+              name="name"
+              value={fields.name}
+              onChange={handleChange}
             />
 
             {/* PRICE (start) */}
@@ -264,6 +281,10 @@ export default function ProductAddForm() {
                 label="Amount"
                 fullWidth
                 required
+                id="price"
+                name="price"
+                value={fields.price}
+                onChange={handleChange}
               />
             </FormControl>
 
@@ -275,6 +296,10 @@ export default function ProductAddForm() {
               inputProps={{ min: '0' }}
               required
               sx={{ marginBottom: '1.4em' }}
+              id="quantity"
+              name="quantity"
+              value={fields.quantity}
+              onChange={handleChange}
             />
 
             {/* DESCRIPTION (start) */}
@@ -287,6 +312,10 @@ export default function ProductAddForm() {
                 minRows={6}
                 required
                 sx={{ marginBottom: '1.2em' }}
+                id="description"
+                name="description"
+                value={fields.description}
+                onChange={handleChange}
               />
             </Box>
           </Box>

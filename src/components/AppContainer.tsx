@@ -151,6 +151,7 @@ export default function AppContainer({
           margin: '80px auto',
           padding: '2rem',
           color: 'rgb(75, 85, 99)',
+          width: { xs: '100%', sm: '70%' },
         }}
       >
         {children}

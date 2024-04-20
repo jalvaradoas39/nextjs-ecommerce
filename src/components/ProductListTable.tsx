@@ -129,7 +129,7 @@ export default function ProductListTable({ products }: ProductListTableProps) {
             />
           </Link>
 
-          <Link href={`/admin/product/${params.id}`}>
+          <Link href={`/admin/product/${params.id}/view`}>
             <RemoveRedEyeOutlinedIcon
               style={{ fontSize: '1.4rem', color: 'rgb(112 112 113)' }}
             />

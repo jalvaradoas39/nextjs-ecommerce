@@ -60,3 +60,29 @@ export async function productEdit(formData: FormData) {
 
   redirect('/admin');
 }
+
+export async function productDelete(productId: number) {
+  // delete image from cloudinary
+  const currentProduct = await db.product.findUnique({
+    where: {
+      id: productId,
+    },
+  });
+
+  if (currentProduct) {
+    const public_id = getImagePublicId(currentProduct.imageUrl);
+
+    await cloudinary.uploader.destroy(
+      `${process.env.CLOUDINARY_PROJECT_FOLDER}/${public_id}`
+    );
+  }
+
+  // delete image from database
+  await db.product.delete({
+    where: {
+      id: productId,
+    },
+  });
+
+  redirect('/admin');
+}

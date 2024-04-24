@@ -12,6 +12,7 @@ import { getStatusColor } from '@/utils/status';
 import formatStatus from '@/utils/formatStatus';
 import { formatToUSD } from '@/utils/moneyFormat';
 import { ProductStatus } from '@/types';
+import * as actions from '@/actions';
 
 interface ProductData {
   id: number;
@@ -28,6 +29,10 @@ interface ProductListTableProps {
 }
 
 export default function ProductListTable({ products }: ProductListTableProps) {
+  const handleDelete = (id: number) => {
+    actions.productDelete(id);
+  };
+
   const rows = products;
 
   const columns: GridColDef[] = [
@@ -136,6 +141,7 @@ export default function ProductListTable({ products }: ProductListTableProps) {
           </Link>
 
           <IconButton
+            onClick={() => handleDelete(params.id as number)}
             aria-label="delete"
             style={{ marginBottom: '12px' }}
             disableRipple

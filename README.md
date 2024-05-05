@@ -32,6 +32,8 @@ Clone the repository to your local machine:
 git clone https://github.com/yourusername/nextjs-ecommerce.git
 ```
 
+Change into project directory
+
 ```bash
 cd nextjs-ecommerce
 ```
@@ -44,7 +46,7 @@ npm install
 
 Environment Setup:
 
-Create a .env file in the root directory and add the following:
+`Note:` Create a .env file in the root directory and add the following:
 
 ```bash
 NEXTAUTH_URL= 'http://localhost:3000'
@@ -66,6 +68,10 @@ Running the project:
 ```bash
 npm run dev
 ```
+
+## Preview project:
+
+https://nextjs-ecommerce-prod.vercel.app/admin
 
 ## Learn More
 
